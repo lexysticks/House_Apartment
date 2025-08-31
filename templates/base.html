@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+</head>
+<body>
+  <main id="mainContent">
+    <nav class="navbar">
+      
+      <!-- Logo (Left) -->
+      <div class="logo">
+        <img src="{% static 'image/logo.png' %}" alt="Logo" width="100px">
+      </div>
+  
+      <!-- Hamburger (Right, visible on mobile) -->
+      <div class="hamburger" id="hamburger">
+        ☰
+      </div>
+  
+      <!-- Nav Links (Center on desktop, dropdown on mobile) -->
+      <div class="nav-links" id="navLinks">
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'about' %}">ABOUT</a>
+        <a href="{% url 'rent' %}">RENT</a>
+        <a href="{% url 'buy' %}">BUY</a>
+        <a href="{% url 'shortlet' %}">SHORTLETS</a>
+        <a href="{% url 'land' %}">LANDS</a>
+        <a href="{% url 'contact' %}">CONTACT</a>
+        <button class="login-btn">LOGIN</button>
+      </div>
+      
+    </nav>
+  </main>
+  
+  
+    
+        
+         
+          
+          
+          
+        
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+      <div class="ftn">
+        <!-- About -->
+        <div class="apartment">
+          <div class="apart">
+            <img src="{% static 'image/logo.png' %}" alt="logo" width="40px">
+            <h2>Apartment</h2>
+          </div>
+          <p class="ftn_p">
+            We’re a high-standard, African-focused platform connecting landlords, buyers, and renters across Africa.  
+            Our mission is to make renting, buying, and listing both short-lets and properties simple, secure, and accessible for everyone.  
+            Whether you’re listing a home, selling a property, finding a place to stay, or a property to buy,  
+            Service Apartment Africa is your trusted partner.
+          </p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div class="quick_link">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">› Home</a></li>
+            <li><a href="#">› About Us</a></li>
+            <li><a href="#">› Apartment</a></li>
+            <li><a href="#">› Contact</a></li>
+          </ul>
+        </div>
+    
+        <!-- Get in Touch -->
+        <div class="get_touch">
+          <h2>Get In Touch</h2>
+          <ul>
+            <li><i class="fa fa-location-dot"></i> Arlington, Texas, USA</li>
+            <li><i class="fa fa-location-dot"></i> Lagos, Nigeria</li>
+            <li><i class="fa fa-phone"></i> <a href="tel:+2348143727933">+234 8143 727933</a></li>
+            <li><i class="fa fa-phone"></i> <a href="tel:+2349048123636">+234 9048 123636</a></li>
+            <li><i class="fa fa-envelope"></i> <a href="mailto:info@serviceapartment.africa">info@serviceapartment.africa</a></li>
+          </ul>
+        </div>
+    
+        <!-- Follow Us -->
+        <div class="follow_up">
+          <h2>Follow Us</h2>
+          <p>Stay updated and connected with us on social media for the latest listings and updates.</p>
+          <div class="social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    
+      <hr>
+      <p class="ftn_copy">&copy; 2025 All Rights Reserved by SERVICE APARTMENT.</p>
+    </footer>
+    
+    <!-- <footer>
+        <div class="ftn">
+        <div class="apartment">
+            <div class="apart">
+                <img src="{% static 'image/logo.png' %}" alt="" width="30px">
+                <h2>Apartment</h2>
+    
+            </div>
+    
+            <p class="ftn_p">We’re a high-standard, African <br>-focused platform connecting <br> landlords, buyers, and renters <br> across Africa. Our mission is to <br> make renting, buying, and listing  <br>both short-lets and properties <br> simple, secure, and accessible for <br> everyone. Whether you’re listing a <br> home, selling a property, finding a <br> place to stay or a property to buy,  <br>Service Apartment Africa is your  <br>trusted partner </p>
+        </div>
+    
+        <div class="quick_link">
+            <div class="quick">
+                <h2>Quick Link</h2>
+            </div>
+            <div class="link">
+                <ul>
+                    
+                        
+                    <li><a href="#"> &gt;  Home</a></li>
+                    
+                    <li><a href="#"> &gt;  About Us</a></li>
+                    <li><a href="#">&gt;  Apartment</a></li>
+                    <li><a href="#">&gt;  Contact</a></li>
+                </ul>
+            </div>
+    
+        </div>
+        <div class="get_touch">
+            <div class="touch">
+                <h2>Get In Touch</h2>
+                <ul>
+                    <li><i class="fa fa-location-dot"></i> Arlington, Texas, USA. </li>
+                    <li><i class="fa fa-location-dot"></i>  Lagos, Nigeria. </li>
+                    <li><i class="fa fa-phone"></i><a href="tel:
+                        +234 8143 727933">
+                        +234 8143 727933</a></li>
+                    <li><i class="fa fa-phone"></i><a href="tel:
+                        +234 9048 123636">
+                        +234 9048 123636</a></li>
+                        <li><i class="fa fa-envelope"><a href="mailto:
+                            info@serviceapartment.africa
+                            ">
+                            info@serviceapartment.africa
+                            </a></i></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="follow_up">
+            <div class="follow">
+                <h2>Follow up</h2>
+                <h6>Stay updated and connected with <br> us on social media for the latest <br> listings and updates</h6>
+            </div>
+            <div class="social">
+                <i class="fa fa-facebook"> </i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter"></i>
+               
+                 
+                
+            </div>
+        </div>
+    </div>
+        <br><hr>
+        
+        
+        <p class="ftn_p">copyright &copy; 25 All Rights Reserved by SERVICE APARTMENT. </p>
+    </footer> -->
+  
+<script src="{% static 'style/apartment.js' %}"></script>
+<script>
+  // Initialize the map and set its view
+  var map = L.map('map').setView([6.5244, 3.3792], 13); // Lagos coordinates
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add a marker
+  L.marker([6.5244, 3.3792])
+    .addTo(map)
+    .bindPopup('Hello from Lagos!')
+    .openPopup();
+</script>
+
+</body>
+
+  
+</html>

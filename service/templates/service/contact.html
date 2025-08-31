@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+<section class="why_choose_us">
+    
+        <div class="choose_pro">
+            <h1>CONTACT US</h1>
+            <p>HOME/CONTACT</p>
+        
+
+        </div>
+        <div class="choose">
+            <img src="{% static 'image/contact-last.jpg' %}" alt="" width="500px">
+    
+        </div>
+    </div>
+</section>
+<section class="team">
+    <div class="meet_team">
+      <h1>Contact Us</h1>
+      <p>
+        Service Apartment is ready to answer you anytime you call and deliver the
+        assistance you need through our well-experienced customer service agents.
+      </p>
+  
+      <div class="contact-cards">
+        <div class="card">
+          <i class="fa fa-map-marker"></i>
+          <h5>Lagos, Nigeria</h5>
+        </div>
+  
+        <div class="card">
+          <i class="fa fa-envelope"></i>
+          <h5>info@serviceapartment.africa</h5>
+        </div>
+  
+        <div class="card">
+          <i class="fa fa-phone"></i>
+          <h5>+234 8143 727933</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+    <div class="container">
+</section>
+
+<section>
+    <div class="contact__us">
+
+        
+
+    </div>
+</section>
+
+<section class="mapp">
+    
+    <div class="map">
+
+        <div id="map" style="height: 500px; width: 400px;" class="map"></div>
+        
+
+    </div>
+
+
+    <div class="contact_info">
+        <p>Send us a message today about whatever question that is bothering you, our customer service is active 100% to answer any question</p>
+        <div class="contact_input">
+            <input type="text" name="" id="" placeholder="Your FirstName">
+        <input type="text" name="" id="" placeholder="Your LastName">
+        <br> <br>
+        <input type="email" name="" id="" placeholder="Enter email">
+        <br> <br>
+        <textarea name="" id="" cols="80" rows="10"></textarea> <br>
+       <button class="ctn"> <a href="" type="submit" class="send_mesg">Send a message</a></button>
+            
+        </div>
+        
+    </div>
+  
+</section>
+
+
+
+
+{% endblock %}
+<script>
+    // Initialize the map and set its view
+    var map = L.map('map').setView([6.5244, 3.3792], 13); // Lagos coordinates
+  
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+  
+    // Add a marker
+    L.marker([6.5244, 3.3792])
+      .addTo(map)
+      .bindPopup('Hello from Lagos!')
+      .openPopup();
+  </script>
+

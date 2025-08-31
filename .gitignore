@@ -1,0 +1,36 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+*.log
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Django stuff
+staticfiles/
+media/
+
+# Secrets
+.env
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+

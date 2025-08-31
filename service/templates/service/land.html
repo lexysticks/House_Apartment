@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="rent">
+    <div class="rent_one">
+        <h2>Land Properties For Sale</h2>
+       <p>Find Your Perfect Land! Explore our selection of prime land parcels available for purchase. Ideal for development, investment, or building your dream home.</p>
+    </div>
+    <div class="property">
+      <ul class="property-list">
+        <li><a href="#" class="active">featured</a></li>
+        
+       
+      </ul>
+      </div>
+</div>
+
+
+
+<!-- Rent Cards Grid -->
+<div class="property-grid">
+  {% for land in page_obj %}
+  <div class="property-card">
+    <div class="image-container">
+    <img src="{{ land.images.url }}" alt="Property Image">
+   <span class="badge">{{ land.category_type }}</span>
+    <!-- <span class="category-label">{{ prop.category|title }}</span> -->
+</div>
+<div class="property-details">
+  <p class="price" >₦ {{ land.price|floatformat:2 }}</p>
+   <p class="title">{{ land.title }}</p>
+    <h5>📍 {{ land.location}}</h5>
+    <div class="">
+      
+    
+    <div></div>
+    <div></div>
+  </div>
+ </div>
+</div>
+  
+  {% empty %}
+    <p>No rental listings available.</p>
+  {% endfor %}
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <ul class="pagination-list">
+    {% if page_obj.has_previous %}
+      <li><a href="?page=1">&laquo; First</a></li>
+      <li><a href="?page={{ page_obj.previous_page_number }}">‹ Previous</a></li>
+    {% else %}
+      <li class="disabled">&laquo; First</li>
+      <li class="disabled">‹ Previous</li>
+    {% endif %}
+
+    <li class="current-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</li>
+
+    {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}">Next ›</a></li>
+      <li><a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+    {% else %}
+      <li class="disabled">Next ›</li>
+      <li class="disabled">Last &raquo;</li>
+    {% endif %}
+  </ul>
+</div>
+
+{% endblock %}

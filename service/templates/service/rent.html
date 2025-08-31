@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="rent">
+    <div class="rent_one">
+        <h2>Properties For Rent</h2>
+        <p>Find Your Perfect Haven! This remarkable property offers the ideal blend of style and functionality. From its inviting spaces to its prime location, it's designed to impress. Act fast and make this exceptional home yours today</p>
+        
+    </div>
+    <div class="property">
+      <ul class="property-list">
+        <li><a href="#" class="active">For Rent</a></li>
+       
+      
+      </ul>
+      </div>
+</div>
+
+
+
+<!-- Rent Cards Grid -->
+<!-- <div class="property-grid">
+  {% for rent in page_obj %}
+    <div class="property-card">
+      <div class="image-container">
+        <img src="{{ rent.images.url }}" alt="Property Image">
+        <span class="badge">{{ rent.category_type }}</span>
+        <span class="category-label">{{ rent.category|title }}</span>
+      </div>
+      <div class="property-details">
+        <div class="price">₦{{ rent.price|floatformat:2 }}</div>
+        <div class="title">{{ rent.title }}</div>
+        <div class="location">
+          📍 {{ rent.location }}{% if rent.sub_location %}, {{ rent.sub_location }}{% endif %}
+        </div>
+        <div class="features">
+          <div>📐 {{ rent.size|default:"N/A" }}</div>
+          <div>🛏️ {{ rent.bedrooms }} Bed</div>
+          <div>🛁 {{ rent.bathrooms }} Bath</div>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No rental listings available.</p>
+  {% endfor %}
+</div> -->
+<div class="property-grid">
+  {% for rent in page_obj %}
+  <div class="property-card">
+    <div class="image-container">
+    <img src="{{ rent.images.url }}" alt="Property Image">
+   <span class="badge">{{ rent.category_type }}</span>
+    <!-- <span class="category-label">{{ prop.category|title }}</span> -->
+</div>
+<div class="property-details">
+  <p class="price" >₦ {{ rent.price|floatformat:2 }}</p>
+   <p class="title">{{ rent.title }}</p>
+    <h5>📍 {{ rent.location}}</h5>
+    <div class="">
+      <ul class="feature">
+          <li>📐 {{ rent.size|default:"N/A" }}</li>
+          <li>🛏️ {{ rent.bedrooms }} Bed</li>
+          <li>🛁 {{ rent.bathrooms }} Bath</li>
+      </ul>
+    
+    <div></div>
+    <div></div>
+  </div>
+ </div>
+</div>
+  {% empty %}
+    <p>No rental listings available.</p>
+  {% endfor %}
+</div>
+
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <ul class="pagination-list">
+    {% if page_obj.has_previous %}
+      <li><a href="?page=1">&laquo; First</a></li>
+      <li><a href="?page={{ page_obj.previous_page_number }}">‹ Previous</a></li>
+    {% else %}
+      <li class="disabled">&laquo; First</li>
+      <li class="disabled">‹ Previous</li>
+    {% endif %}
+
+    <li class="current-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</li>
+
+    {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}">Next ›</a></li>
+      <li><a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+    {% else %}
+      <li class="disabled">Next ›</li>
+      <li class="disabled">Last &raquo;</li>
+    {% endif %}
+  </ul>
+</div>
+
+{% endblock %}

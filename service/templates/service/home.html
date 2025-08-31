@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+  <!-- HEADER / HERO -->
+  <header class="header">
+    <div class="header1">
+
+      <div class="lrb">
+        <ul>
+          <li class="list">List.</li>
+          <li class="rent">Rent.</li>
+          <li class="list">Buy.</li>
+        </ul>
+      </div>
+
+      <p>
+        Making real estate simple and easy! Whether you’re listing your apartment
+        for shortlet, booking a comfortable stay, or buying your dream property. 
+        Service Apartment Africa is the platform that connects property owners,
+        renters, and buyers in one seamless experience.
+      </p>
+
+      <div class="lrb_pro_max">
+        <button class="btn_book">Book an Apartment</button>
+        <button class="btn_book">See Landed Properties</button>
+      </div>
+
+    </div>
+
+    <!-- SLIDER -->
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <img src="{% static 'image/service_1.jpg' %}" alt="Slide 1">
+        <img src="{% static 'image/service_2.jpg' %}" alt="Slide 2">
+      </div>
+      <button class="nav prev" id="prevBtn">&#10094;</button>
+      <button class="nav next" id="nextBtn">&#10095;</button>
+    </div>
+  </header>
+</main>
+
+
+</div>
+<section class="why_choose_us">
+    <div class="choose">
+        <img src="{% static 'image/service_2.jpg' %}" alt="" width="500px">
+
+    </div>
+        <div class="choose_pro">
+            <h1>Why Choose Us</h1>
+            <h3>For Renters And Buyers:</h3>
+            <p>Find luxurious and affordable short-lets or properties to own across Africa.  <br>Only the best, vetted listings for your peace of mind. Simple process with  <br>secure payments and instant confirmations. </p>
+            <h3>For Apartment and Property Owners:</h3>
+            <p>Start earning by listing your apartment or selling your land in just a few  <br>clicks. Attract verified clients looking for rentals or real estate deals. Pay a <br> simple monthly fee to have your property showcased. Guaranteed payouts  and smooth, secure transactions.</p>
+
+        </div>
+    </div>
+</section>
+
+<section class="about_us">
+    <div class="about">
+        <h2>About Us</h2>
+        <p>At Service Apartment Africa, we simplify property search, rentals, and real estate across Africa. Our platform connects guests with quality short-let apartments and helps buyers find verified properties for sale. Whether you’re renting for a few days or investing for  the long term, we make the experience seamless and secure. </p>
+        <br>
+
+        <ul class="check">
+           
+            <li> <i class="fa fa-check" ></i> Agents create profiles and detailed listings.</li>
+            <li><i class="fa fa-check"> </i> Clients book apartments or request property viewings with one click.</li>
+            <li> <i class="fa fa-check"></i> Secure and seamless online process for rentals and real estate deals</li>
+        </ul>
+        <button class="read_more"><a href="#">Read More</a></button>
+
+    </div>
+    <div class="about_img">
+        <img src="{% static 'image/108.jpg' %}" alt="" width="500px">
+    </div>
+</section>
+<section class="show">
+    <!-- PROPERTY FILTER NAV -->
+    <div class="property">
+      <ul class="property-list">
+        <li><a href="#" class="active">Show All</a></li>
+        <li><a href="#">Apartment</a></li>
+        <li><a href="#">Landed Properties</a></li>
+      </ul>
+    </div>
+  
+    <!-- PROPERTY GRID -->
+    <div class="property-grid">
+      {% for prop in props %}
+      <div class="property-card">
+        <!-- IMAGE + BADGE -->
+        <div class="image-container">
+          <img src="{{ prop.images.url }}" alt="Property Image">
+          <span class="badge">{{ prop.category_type }}</span>
+          <!-- If you want category label at bottom:
+          <span class="category-label">{{ prop.category|title }}</span>
+          -->
+        </div>
+  
+        <!-- DETAILS -->
+        <div class="property-details">
+          <p class="price">₦ {{ prop.price|floatformat:2 }}</p>
+          <p class="title">{{ prop.title }}</p>
+          <h5>📍 {{ prop.location }}</h5>
+  
+          <ul class="feature">
+            <li>📐 {{ prop.size|default:"N/A" }}</li>
+            <li>🛏️ {{ prop.bedrooms }} Bed</li>
+            <li>🛁 {{ prop.bathrooms }} Bath</li>
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  
+</div>
+
+
+    
+
+      
+
+        
+        <div class="click_to">
+            <button class="btn_book"><a href="#">Click To See More Apartment</a></button>
+            <button class="btn_book"><a href="#">Click To See More Landed Properties</a></button>
+        </div>
+    
+    </section>
+
+    <section class="contact_us">
+      <div class="about_img">
+          <img src="{% static 'image/contact.jpg' %}" alt="" width="500px" class="about_img">
+      </div>
+  
+      <div class="contact">
+          <h2>Contact With Our <br> Customer Service</h2>
+          <p>Our customer services staff are patiently ready to answer any of your questions been an agent or a client. </p>
+          <button class="btn_contact"><i class="fa fa-calendar"></i><a href="#">  Contact Us</a></button>
+          <i class="fa fa-square-check"></i>
+          
+      </div>
+      
+     
+  
+  </section>
+
+
+
+
+
+{% endblock %}

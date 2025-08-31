@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+<section class="why_choose_us">
+    
+        <div class="choose_pro">
+            <h1>ABOUT US</h1>
+            <p>HOME/ABOUT</p>
+        
+
+        </div>
+        <div class="choose">
+            <img src="{% static 'image/about_page.jpg' %}" alt="" width="500px">
+    
+        </div>
+    </div>
+</section>
+
+
+<section class="why_choose_us">
+    <div class="choose">
+        <img src="{% static 'image/108.jpg' %}" alt="" width="500px"> 
+
+    </div>
+        <div class="choose_pro">
+            <h1>About Service Apartment</h1>
+            <p>At Service Apartment Africa, we simplify property search, rentals, and real estate across Africa. Our platform connects guests with quality short-let apartments and helps buyers find verified properties for sale. Whether you’re renting for a few days or investing for the long term, we make the experience seamless and secure. <br> 
+
+                We support property owners in listing apartments for rent or homes for sale, while guests and buyers enjoy a smooth, trusted process. Our mission is to create value for renters, landlords, and real estate investors through convenience, transparency, and top-tier service. <br> 
+                
+                We uphold the highest standards across every touchpoint—from listings to transactions. With Service Apartment Africa, you don’t just find a place to stay or invest—you discover opportunity </p>
+        
+        </div>
+    </div>
+</section>
+
+<section class="show">
+    <div class="property">
+      <ul class="property-list">
+        <li><a href="#" class="active">Show All</a></li>
+        <li><a href="#">Apartment</a></li>
+        <li><a href="#">Landed Properties</a></li>
+      </ul>
+      </div>
+      
+<!-- <div class="property-grid">
+      {% for prop in props %}
+  <div class="property-card">
+      <div class="image-container">
+      <img src="{{ prop.image.url }}" alt="Property Image">
+     <span class="badge">{{ prop.category_type }}</span>
+      <span class="category-label">{{ prop.category|title }}</span>
+  </div>
+  <div class="property-details">
+     <div class="price">₦{{ prop.price|floatformat:2 }}</div>
+      <div class="title">{{ prop.title }}</div>
+      <div class="location">📍 {{ prop.location }}{% if prop.sub_location %}, {{ prop.sub_location }}{% endif %}</div>
+      <div class="features">
+      <div>📐 {{ prop.size|default:"N/A" }}</div>
+      <div>🛏️ {{ prop.bedrooms }} Bed</div>
+      <div>🛁 {{ prop.bathrooms }} Bath</div>
+    </div>
+   </div>
+</div>
+      {% endfor %}
+</div>  -->
+
+<div class="property-grid">
+    {% for prop in props %}
+<div class="property-card">
+    <div class="image-container">
+    <img src="{{ prop.images.url }}" alt="Property Image">
+   <span class="badge">{{ prop.category_type }}</span>
+    <!-- <span class="category-label">{{ prop.category|title }}</span> -->
+</div>
+<div class="property-details">
+  <p class="price" >₦ {{ prop.price|floatformat:2 }}</p>
+   <p class="title">{{ prop.title }}</p>
+    <h5>📍 {{ prop.location}}</h5>
+    <div class="">
+      <ul class="feature">
+          <li>📐 {{ prop.size|default:"N/A" }}</li>
+          <li>🛏️ {{ prop.bedrooms }} Bed</li>
+          <li>🛁 {{ prop.bathrooms }} Bath</li>
+      </ul>
+    
+    <div></div>
+    <div></div>
+  </div>
+ </div>
+</div>
+    {% endfor %}
+</div>
+<div class="click_to">
+            <button class="btn_book"><a href="#">Click To See More Apartment</a></button>
+            <button class="btn_book"><a href="#">Click To See More Landed Properties</a></button>
+</div>
+    
+    </section>
+    <!-- ====== TEAM SECTION ====== -->
+<section class="team">
+    <div class="meet_team">
+      <h1>Meet Our Team</h1>
+      <p>
+        We’re a passionate group of professionals dedicated to making your rental
+        experience smooth and reliable. Get to know the people behind Service Apartment Africa.
+      </p>
+    </div>
+  
+    <div class="container">
+      <div class="card">
+        <img src="{% static 'image/person3.jpg' %}" alt="Gabriel Benjamin">
+        <h2>Gabriel Benjamin</h2>
+        <p>Managing Director</p>
+        <div class="social">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+        </div>
+      </div>
+  
+      <div class="card">
+        <img src="{% static 'image/person1.jpg' %}" alt="Usman Victoria">
+        <h2>Usman Victoria</h2>
+        <p>Human Resources</p>
+        <div class="social">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+        </div>
+      </div>
+  
+      <div class="card">
+        <img src="{% static 'image/person4.jpg' %}" alt="Oyedeji Joshua">
+        <h2>Oyedeji Joshua</h2>
+        <p>Tech Support</p>
+        <div class="social">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+        </div>
+      </div>
+  
+      <div class="card">
+        <img src="{% static 'image/person2.jpg' %}" alt="Eniola Aluko">
+        <h2>Eniola Aluko</h2>
+        <p>Customer Support Lead</p>
+        <div class="social">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+        </div>
+      </div>
+  
+      <div class="card">
+        <img src="{% static 'image/person5.jpg' %}" alt="Sulyman Nasir">
+        <h2>Sulyman Nasir</h2>
+        <p>Legal Consultant</p>
+        <div class="social">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+   
+
+    
+
+
+
+
+
+</section>
+<section class="contact_us">
+  <div class="about_img">
+      <img src="{% static 'image/contact.jpg' %}" alt="" width="500px" class="about_img">
+  </div>
+
+  <div class="contact">
+      <h2>Contact With Our <br> Customer Service</h2>
+      <p>Our customer services staff are patiently ready to answer any of your questions been an agent or a client. </p>
+      <button class="btn_contact"><i class="fa fa-calendar"></i><a href="#">  Contact Us</a></button>
+      <i class="fa fa-square-check"></i>
+      
+  </div>
+  
+ 
+
+</section>
+
+<!-- <section class="contact_us">
+    <div class="about_img">
+        <img src="{% static 'image/contact.jpg' %}" alt="" width="800px">
+    </div>
+
+    <div class="contact">
+        <h2>Contact With Our <br> Customer Service</h2>
+        <p>Our customer services staff are patiently ready to answer any of your questions been an agent or a client. </p>
+        <button class="btn_contact"><i class="fa fa-calendar"></i><a href="#">  Contact Us</a></button>
+        <i class="fa fa-square-check"></i>
+        
+    </div> -->
+    
+   
+
+</section>
+
+
+
+
+{% endblock %}
